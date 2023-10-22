@@ -2,6 +2,8 @@ package entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Admins {
     @Basic
@@ -20,6 +22,19 @@ public class Admins {
     @Column(name = "id")
     @GeneratedValue( strategy = GenerationType.IDENTITY)
     private int id;
+//    @OneToMany(mappedBy = "id_admin")
+//    private List<Voyages> voyages;
+//    @OneToMany(mappedBy = "admins")
+//    private List<Voyages> voyages;
+//    public List<Voyages> getVoyages() {
+//        return voyages;
+//    }
+//
+//    public void setVoyages(List<Voyages> voyages) {
+//        this.voyages = voyages;
+//    }
+
+
 
     public String getNom() {
         return nom;
@@ -86,4 +101,5 @@ public class Admins {
         result = 31 * result + id;
         return result;
     }
+    public Admins(){}
 }

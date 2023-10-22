@@ -1,7 +1,9 @@
 package com.example.fly.hiber;
 import java.util.Properties;
 
+import entity.Admins;
 import entity.Clients;
+import entity.Voyages;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -31,7 +33,8 @@ public class HibernateUtil {
 
                 configuration.setProperties(settings);
                 configuration.addAnnotatedClass(Clients.class);
-
+                configuration.addAnnotatedClass(Admins.class);
+                configuration.addAnnotatedClass(Voyages.class);
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                         .applySettings(configuration.getProperties()).build();
                 System.out.println("Hibernate Java Config serviceRegistry created");
